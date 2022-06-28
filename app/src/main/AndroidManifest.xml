@@ -14,6 +14,9 @@
         android:theme="@style/Theme.CardioTracker"
         tools:targetApi="31">
         <activity
+            android:name=".addData"
+            android:exported="false" />
+        <activity
             android:name=".recycler_Show"
             android:exported="false" />
         <activity
