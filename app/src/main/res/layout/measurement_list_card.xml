@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:layout_margin="15dp">
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/purple_08"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
 
 
     <LinearLayout
@@ -16,37 +21,49 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                android:id="@+id/t3"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/adamina"
-                android:text="Systolic "
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/adamina"
-                android:text="Diastolic "
+                android:textAlignment="center"
+                android:text="Systolic"
+                android:textColor="@color/white"
                 android:textSize="22sp" />
-
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
             <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
+                android:id="@+id/t1"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/adamina"
+                android:textAlignment="center"
+                android:text="Diastolic"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/adamina"
+                android:textAlignment="center"
+                android:layout_marginLeft="5dp"
                 android:text="Pulse Rate"
+                android:textColor="@color/white"
                 android:textSize="22sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -54,34 +71,50 @@
 
             <TextView
                 android:id="@+id/systolic_list"
-                android:layout_width="30dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/adamina"
                 android:textAlignment="center"
-                android:textSize="22sp" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
 
             <TextView
                 android:id="@+id/diastolic_list"
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/adamina"
                 android:textAlignment="center"
-                android:textSize="22sp" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
 
             <TextView
                 android:id="@+id/pulse_list"
-                android:layout_width="50dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/adamina"
                 android:textAlignment="center"
-                android:textSize="22sp" />
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="1dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -94,57 +127,72 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:fontFamily="@font/adamina"
                 android:text="Comment:"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/comment_list"
-                android:layout_width="30dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/adamina"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
 
             <TextView
                 android:id="@+id/date_list"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/adamina"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/time_list"
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/adamina"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/delete_list"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:layout_marginLeft="15dp"
-                android:text="DELETE" />
+                android:background="@drawable/buttonshape2"
+                android:text="DELETE"
+                android:textColor="@color/purple_08"
+                android:textSize="18sp"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/update_list"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:layout_marginStart="170dp"
                 android:layout_marginEnd="15dp"
-                android:text="EDIT" />
+                android:background="@drawable/buttonshape2"
+                android:text="EDIT"
+                android:textColor="@color/purple_08"
+                android:textSize="18sp"/>
         </LinearLayout>
 
     </LinearLayout>

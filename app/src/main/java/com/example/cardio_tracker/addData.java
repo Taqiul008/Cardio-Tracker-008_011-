@@ -43,11 +43,30 @@ public class addData extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String s1=systolic.getText().toString();
-                //Toast.makeText(getApplicationContext(),s1,Toast.LENGTH_SHORT).show();
+
+                int x=Integer.parseInt(s1);
+                if(x<95 || x>160)
+                {
+                    systolic.setError("Corrupted Data!");
+                    return;
+                }
+
                 String s2=diastolic.getText().toString();
-                //Toast.makeText(getApplicationContext(),s2,Toast.LENGTH_SHORT).show();
+                x=Integer.parseInt(s2);
+                if(x<60 || x>94)
+                {
+                    diastolic.setError("Corrupted Data!");
+                    return;
+                }
+
                 String s3=pulse.getText().toString();
-                //Toast.makeText(getApplicationContext(),s3,Toast.LENGTH_SHORT).show();
+                x=Integer.parseInt(s3);
+                if(x<20 || x>140)
+                {
+                    pulse.setError("Corrupted Data!");
+                    return;
+                }
+
                 String s4=comment.getText().toString();
                 // Toast.makeText(getApplicationContext(),s4,Toast.LENGTH_SHORT).show();
                 precessinsert(s1,s2,s3,s4);
@@ -56,7 +75,6 @@ public class addData extends AppCompatActivity {
                 comment.setText("");
                 Intent intent=new Intent(getApplicationContext(),recycler_Show.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -74,9 +92,29 @@ public class addData extends AppCompatActivity {
 
                 String s1=systolic.getText().toString();
 
+                int x=Integer.parseInt(s1);
+                if(x<95 || x>160)
+                {
+                    systolic.setError("Corrupted Data!");
+                    return;
+                }
+
                 String s2=diastolic.getText().toString();
+                x=Integer.parseInt(s2);
+                if(x<60 || x>94)
+                {
+                    diastolic.setError("Corrupted Data!");
+                    return;
+                }
 
                 String s3=pulse.getText().toString();
+                x=Integer.parseInt(s3);
+                if(x<20 || x>140)
+                {
+                    pulse.setError("Corrupted Data!");
+                    return;
+                }
+
 
                 String s4=comment.getText().toString();
 
