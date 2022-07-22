@@ -179,9 +179,17 @@ public class addData extends AppCompatActivity {
 
         SimpleDateFormat sd = new SimpleDateFormat("hh:mm");
         String time = sd.format(System.currentTimeMillis());
-        String result=new manager(this).addrecod(s1,s2,s3,s4,date,time);
+        long result=new manager(this).addrecod(s1,s2,s3,s4,date,time);
 
-        Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+        if(result==-1)
+        {
+            Toast.makeText(getApplicationContext(),"Failed To Add",Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"Successfully Added",Toast.LENGTH_SHORT).show();
+        }
+
         systolic.setText("");
         diastolic.setText("");
         pulse.setText("");
