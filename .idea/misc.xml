@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Software/Cardio-Tracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1245" />
         <entry key="..\:/Software/Cardio-Tracker/app/src/main/res/drawable/buttonshape.xml" value="0.1245" />
         <entry key="..\:/Software/Cardio-Tracker/app/src/main/res/drawable/buttonshape2.xml" value="0.1245" />
         <entry key="..\:/Software/Cardio-Tracker/app/src/main/res/drawable/buttonshape3.xml" value="0.1245" />
+        <entry key="..\:/Software/Cardio-Tracker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1245" />
         <entry key="..\:/Software/Cardio-Tracker/app/src/main/res/drawable/ic_wave.xml" value="0.1245" />
         <entry key="..\:/Software/Cardio-Tracker/app/src/main/res/layout/activity_add_data.xml" value="0.22826086956521738" />
         <entry key="..\:/Software/Cardio-Tracker/app/src/main/res/layout/activity_recycler_show.xml" value="0.22826086956521738" />

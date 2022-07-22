@@ -31,7 +31,7 @@ public class manager extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public  String addrecod(String systolic, String diastolic ,String pulse, String comment, String ms_date,String ms_time)
+    public  long addrecod(String systolic, String diastolic ,String pulse, String comment, String ms_date,String ms_time)
     {
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues cv=new ContentValues();
@@ -41,9 +41,8 @@ public class manager extends SQLiteOpenHelper {
         cv.put("comment",comment);
         cv.put("ms_date",ms_date);
         cv.put("ms_time",ms_time);
-        float res=db.insert("tbl_contact",null,cv);
-        if(res==-1)return "Failed";
-        else return "Successfully inserted";
+        long res=db.insert("tbl_contact",null,cv);
+        return res;
     }
 
     public  long updateRecod(int id,String systolic, String diastolic ,String pulse, String comment, String ms_date,String ms_time)
@@ -60,12 +59,21 @@ public class manager extends SQLiteOpenHelper {
         return  res;
     }
 
+
     public Cursor readalldata()
     {
         SQLiteDatabase db=this.getWritableDatabase();
         String qry="select * from tbl_contact order by id desc";
         Cursor cursor=db.rawQuery(qry,null);
         return cursor;
+    }
+
+    public long delete(int id)
+    {
+        String Table_name="Tbl_contact";
+        SQLiteDatabase db=this.getWritableDatabase();
+        long rec=db.delete(Table_name,"id="+id,null);
+        return rec;
     }
 
 
