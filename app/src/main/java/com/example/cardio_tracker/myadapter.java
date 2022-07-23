@@ -38,9 +38,12 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
     @Override
     public void onBindViewHolder(@NonNull myviewholder holder, int position) {
 
-        holder.dSystolic.setText(dataholder.get(position).getSystolic());
-        holder.dDistolic.setText(dataholder.get(position).getDiastolic());
-        holder.dPulse.setText(dataholder.get(position).getPulse());
+        String s1=dataholder.get(position).getSystolic().toString()+"mmHg";
+        holder.dSystolic.setText(s1);
+        String s2=dataholder.get(position).getDiastolic().toString()+"mmHg";
+        holder.dDistolic.setText(s2);
+        String s3=dataholder.get(position).getPulse().toString()+"bps";
+        holder.dPulse.setText(s3);
         holder.dComment.setText(dataholder.get(position).getComment());
         final  model md=dataholder.get(position);
         holder.dms_date.setText(md.getMs_date());
@@ -73,7 +76,7 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
                 if(rec!=-1)
                 {
                     Toast.makeText(context,"Delete Successfully",Toast.LENGTH_SHORT).show();
-                    dataholder.remove(position);
+                    dataholder.remove(holder.getAdapterPosition());
                     notifyDataSetChanged();
                 }
                 else
