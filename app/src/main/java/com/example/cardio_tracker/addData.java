@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,30 +45,50 @@ public class addData extends AppCompatActivity {
             public void onClick(View view) {
                 String s1=systolic.getText().toString();
 
+                if(TextUtils.isEmpty(s1))
+                {
+                    systolic.setError("Required");
+                    return;
+                }
                 int x=Integer.parseInt(s1);
-                if(x<95 || x>160)
+                if(x<60 || x>160)
                 {
                     systolic.setError("Corrupted Data!");
                     return;
                 }
 
                 String s2=diastolic.getText().toString();
-                x=Integer.parseInt(s2);
-                if(x<60 || x>94)
+                if(TextUtils.isEmpty(s2))
+                {
+                    diastolic.setError("Required");
+                    return;
+                }
+
+                if(x<40 || x>120)
                 {
                     diastolic.setError("Corrupted Data!");
                     return;
                 }
-
+                x=Integer.parseInt(s2);
                 String s3=pulse.getText().toString();
-                x=Integer.parseInt(s3);
-                if(x<20 || x>140)
+                if(TextUtils.isEmpty(s3))
+                {
+                    pulse.setError("Required");
+                    return;
+                }
+
+                if(x<30 || x>120)
                 {
                     pulse.setError("Corrupted Data!");
                     return;
                 }
-
+                x=Integer.parseInt(s3);
                 String s4=comment.getText().toString();
+                if(TextUtils.isEmpty(s4))
+                {
+                    pulse.setError("Required");
+                    return;
+                }
                 // Toast.makeText(getApplicationContext(),s4,Toast.LENGTH_SHORT).show();
                 precessinsert(s1,s2,s3,s4);
                 systolic.setText("");

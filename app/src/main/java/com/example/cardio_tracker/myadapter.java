@@ -1,13 +1,17 @@
 package com.example.cardio_tracker;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +50,16 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
         holder.dPulse.setText(s3);
         holder.dComment.setText(dataholder.get(position).getComment());
         final  model md=dataholder.get(position);
+        int  x=Integer.parseInt(md.getSystolic());
+        int y=Integer.parseInt(md.getDiastolic());
+        int z=Integer.parseInt(md.getPulse());
+        if((x>=90 && x<=140) && (y>=60 && y<=90) && (z>65 && z<80))
+        {
+
+            Integer f=R.drawable.healthy;
+            holder.img.setImageResource(f);
+        }
+
         holder.dms_date.setText(md.getMs_date());
         holder.dTime.setText(md.getMs_time());
         holder.button2.setOnClickListener(new View.OnClickListener() {
@@ -69,20 +83,42 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
         holder.button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                manager mgr=new manager(context);
-                String Table_name="Tbl_contact";
-                SQLiteDatabase db=mgr.getReadableDatabase();
-                long rec=db.delete(Table_name,"id="+md.getId(),null);
-                if(rec!=-1)
-                {
-                    Toast.makeText(context,"Delete Successfully",Toast.LENGTH_SHORT).show();
-                    dataholder.remove(holder.getAdapterPosition());
-                    notifyDataSetChanged();
-                }
-                else
-                {
-                    Toast.makeText(context,"Failed", Toast.LENGTH_SHORT).show();
-                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setMessage("Do you want to delete ?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        manager mgr=new manager(context);
+                        String Table_name="Tbl_contact";
+                        SQLiteDatabase db=mgr.getReadableDatabase();
+                        long rec=db.delete(Table_name,"id="+md.getId(),null);
+                        if(rec!=-1)
+                        {
+                            Toast.makeText(context,"Delete Successfully",Toast.LENGTH_SHORT).show();
+                            dataholder.remove(holder.getAdapterPosition());
+                            notifyDataSetChanged();
+                        }
+                        else
+                        {
+                            Toast.makeText(context,"Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.setTitle("Cardio-Tracker");
+                alert.show();
+                alert.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#ff6777"));
+                alert.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.parseColor("#ff6777"));
+
+
             }
         });
     }
@@ -96,6 +132,7 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
 
         TextView dSystolic,dDistolic,dPulse,dComment,dms_date,dTime;
         Button button1,button2;
+        ImageView img;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             dSystolic=(TextView) itemView.findViewById(R.id.systolic_list);
@@ -106,6 +143,7 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
             dTime=(TextView) itemView.findViewById(R.id.time_list);
             button1=(Button) itemView.findViewById(R.id.delete_list);
             button2=(Button) itemView.findViewById(R.id.update_list);
+            img =(ImageView) itemView.findViewById(R.id.danger);
         }
     }
 }
