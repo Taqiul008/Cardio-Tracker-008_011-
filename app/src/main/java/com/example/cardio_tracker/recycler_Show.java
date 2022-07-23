@@ -48,7 +48,7 @@ public class recycler_Show extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),addData.class);
                 startActivity(intent);
-                finish();
+
             }
         });
 
