@@ -32,4 +32,4 @@ You can contribute if you want!
 
 ## License
 
-Distributed Under [MIT](https://choosealicense.com/licenses/mit/) Licence.
+Distributed Under [MIT](https://choosealicense.com/licenses/mit/) License.
