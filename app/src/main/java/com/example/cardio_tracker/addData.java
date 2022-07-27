@@ -63,30 +63,28 @@ public class addData extends AppCompatActivity {
                     diastolic.setError("Required");
                     return;
                 }
-
+                x=Integer.parseInt(s2);
                 if(x<40 || x>120)
                 {
                     diastolic.setError("Corrupted Data!");
                     return;
                 }
-                x=Integer.parseInt(s2);
                 String s3=pulse.getText().toString();
                 if(TextUtils.isEmpty(s3))
                 {
                     pulse.setError("Required");
                     return;
                 }
-
+                x=Integer.parseInt(s3);
                 if(x<30 || x>120)
                 {
                     pulse.setError("Corrupted Data!");
                     return;
                 }
-                x=Integer.parseInt(s3);
                 String s4=comment.getText().toString();
                 if(TextUtils.isEmpty(s4))
                 {
-                    pulse.setError("Required");
+                    comment.setError("Required");
                     return;
                 }
                 // Toast.makeText(getApplicationContext(),s4,Toast.LENGTH_SHORT).show();
@@ -96,6 +94,7 @@ public class addData extends AppCompatActivity {
                 comment.setText("");
                 Intent intent=new Intent(getApplicationContext(),recycler_Show.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -113,32 +112,49 @@ public class addData extends AppCompatActivity {
 
                 String s1=systolic.getText().toString();
 
+                if(TextUtils.isEmpty(s1))
+                {
+                    systolic.setError("Required");
+                    return;
+                }
                 int x=Integer.parseInt(s1);
-                if(x<95 || x>160)
+                if(x<60 || x>160)
                 {
                     systolic.setError("Corrupted Data!");
                     return;
                 }
 
                 String s2=diastolic.getText().toString();
+                if(TextUtils.isEmpty(s2))
+                {
+                    diastolic.setError("Required");
+                    return;
+                }
                 x=Integer.parseInt(s2);
-                if(x<60 || x>94)
+                if(x<40 || x>120)
                 {
                     diastolic.setError("Corrupted Data!");
                     return;
                 }
-
                 String s3=pulse.getText().toString();
+                if(TextUtils.isEmpty(s3))
+                {
+                    pulse.setError("Required");
+                    return;
+                }
                 x=Integer.parseInt(s3);
-                if(x<20 || x>140)
+                if(x<30 || x>120)
                 {
                     pulse.setError("Corrupted Data!");
                     return;
                 }
 
-
                 String s4=comment.getText().toString();
-
+                if(TextUtils.isEmpty(s4))
+                {
+                    comment.setError("Required");
+                    return;
+                }
                 ContentValues cv=new ContentValues();
                 cv.put("systolic",s1);
                 cv.put("diastolic",s2);
