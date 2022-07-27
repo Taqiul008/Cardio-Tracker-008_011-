@@ -5,10 +5,29 @@ An android app that helps a user to track his blood pressure and heart rate.
 - [@Taqiul_Islam](https://github.com/Taqiul008)
 - [@Mominur_Rahman](https://github.com/Momin1807011)
 
+## Badges
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
 ## Screenshots
+<img src="ScreenShots/1_Splash%20Screen.jpeg" width="300" height="600">
+<img src="ScreenShots/2_History%20Page.jpeg" width="300" height="600">
+<img src="ScreenShots/3_Added%20Information.jpeg" width="300" height="600">
+<img src="ScreenShots/4_Update%20Page.jpeg" width="300" height="600">
+<img src="ScreenShots/5_After%20Update.jpeg" width="300" height="600">
+<img src="ScreenShots/6_Delete%20Alert.jpeg" width="300" height="600">
+<img src="ScreenShots/7_After%20Delete.jpeg" width="300" height="600">
 
-![App Screenshot]()
+## Features
 
+This android app lets you:
+- Keep the track of your Systolic and Diastolic blood pressure.
+- You can mark your heart rate every day.
+- There will be an alert symbol that identify your contidion.
+- You can add comments according to your health condition.
+- Everything will be shown in a combined frame.
+- You can update your given inputs.
+- Any previous record can be deleted if you want.
 
 ## Documentation
 
