@@ -53,7 +53,7 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
         int  x=Integer.parseInt(md.getSystolic());
         int y=Integer.parseInt(md.getDiastolic());
         int z=Integer.parseInt(md.getPulse());
-        if((x>=90 && x<=140) && (y>=60 && y<=90) && (z>65 && z<80))
+        if((x>=90 && x<=140) && (y>=60 && y<=90) && (z>65 && z<85))
         {
 
             Integer f=R.drawable.healthy;
