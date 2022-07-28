@@ -13,7 +13,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
-
+/**
+ * In this class Insert and Update operation data has been taken from user.
+ */
 public class addData extends AppCompatActivity {
     EditText systolic,diastolic,comment,pulse;
     Button add,update;
@@ -101,6 +103,10 @@ public class addData extends AppCompatActivity {
         editData();
 
         update.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Inside this function updated data will be passed to the manager class update function.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
 
@@ -188,7 +194,9 @@ public class addData extends AppCompatActivity {
 
 
     }
-
+    /**
+     * This function will receive data which need to updated from bundle which is initialize in adapter class
+     */
     private void editData() {
 
         if(getIntent().getBundleExtra("userdata")!=null) {
@@ -208,7 +216,13 @@ public class addData extends AppCompatActivity {
 
 
     }
-
+    /**
+     * This function will send data to the manager class to insert in database
+     * @param s1
+     * @param s2
+     * @param s3
+     * @param s4
+     */
     private void precessinsert(String s1, String s2, String s3, String s4) {
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");

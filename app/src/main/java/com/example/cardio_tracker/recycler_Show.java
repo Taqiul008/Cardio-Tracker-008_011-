@@ -13,7 +13,9 @@ import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-
+/**
+ * This  activity class will show user data in recyclerView fetching using adapter class
+ */
 public class recycler_Show extends AppCompatActivity {
 
     RecyclerView recyclerView;

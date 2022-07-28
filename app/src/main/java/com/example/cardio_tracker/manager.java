@@ -8,13 +8,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+/**
+ * This  class will be used to create ,insert,update,delete,fetch from database.
+ */
 public class manager extends SQLiteOpenHelper {
 
     private  static  final  String dbname="dbcontact";
     public manager(@Nullable Context context) {
         super(context, dbname, null, 1);
     }
-
+    /**
+     * A table name='dbcontact' will create having column id,systolic,diastolic,pulse,comment,date and time.
+     * @param sqLiteDatabase
+     */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
@@ -22,7 +28,12 @@ public class manager extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(qry);
 
     }
-
+    /**
+     * If there is a table with same name then the table will be drop.
+     * @param sqLiteDatabase
+     * @param i
+     * @param i1
+     */
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
@@ -30,7 +41,16 @@ public class manager extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(qry);
         onCreate(sqLiteDatabase);
     }
-
+    /**
+     * This function will perform insert operation.
+     * @param systolic
+     * @param diastolic
+     * @param pulse
+     * @param comment
+     * @param ms_date
+     * @param ms_time
+     * @return
+     */
     public  long addrecod(String systolic, String diastolic ,String pulse, String comment, String ms_date,String ms_time)
     {
         SQLiteDatabase db=this.getWritableDatabase();
@@ -44,7 +64,17 @@ public class manager extends SQLiteOpenHelper {
         long res=db.insert("tbl_contact",null,cv);
         return res;
     }
-
+    /**
+     * This function will perform Update operation.
+     * @param id
+     * @param systolic
+     * @param diastolic
+     * @param pulse
+     * @param comment
+     * @param ms_date
+     * @param ms_time
+     * @return
+     */
     public  long updateRecod(int id,String systolic, String diastolic ,String pulse, String comment, String ms_date,String ms_time)
     {
         SQLiteDatabase db=this.getWritableDatabase();
@@ -59,7 +89,10 @@ public class manager extends SQLiteOpenHelper {
         return  res;
     }
 
-
+    /**
+     * Read all data from from database.
+     * @return single row from table using cursor
+     */
     public Cursor readalldata()
     {
         SQLiteDatabase db=this.getWritableDatabase();
@@ -67,7 +100,11 @@ public class manager extends SQLiteOpenHelper {
         Cursor cursor=db.rawQuery(qry,null);
         return cursor;
     }
-
+    /**
+     * This function will perform Delete operation.
+     * @param id
+     * @return
+     */
     public long delete(int id)
     {
         String Table_name="Tbl_contact";

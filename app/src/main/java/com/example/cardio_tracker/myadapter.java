@@ -19,26 +19,43 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
+/**
+ * This  adapter class will fit data in recyclerView
+ */
 public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
 
     Context context;
     SQLiteDatabase sqLiteDatabase;
     ArrayList<model> dataholder;
+    /**
+     * It is constructor of myadapter class.
+     * @param context
+     * @param sqLiteDatabase
+     * @param dataholder
+     */
 
     public myadapter(Context context, SQLiteDatabase sqLiteDatabase, ArrayList<model> dataholder) {
         this.context = context;
         this.sqLiteDatabase = sqLiteDatabase;
         this.dataholder = dataholder;
     }
-
+    /**
+     * This function will show the measurement_list_card layout in recycler view.
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.measurement_list_card,parent,false);
         return new myviewholder(view);
     }
-
+    /**
+     * This method will set value in measurement_list_card layouts text field .Inside this function update and delete function will be called.
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull myviewholder holder, int position) {
 
@@ -133,7 +150,12 @@ public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
         TextView dSystolic,dDistolic,dPulse,dComment,dms_date,dTime;
         Button button1,button2;
         ImageView img;
+
         public myviewholder(@NonNull View itemView) {
+            /**
+             * This function will generate alert dialogue in which user will confirm if data will delete or not.
+             * @param view
+             */
             super(itemView);
             dSystolic=(TextView) itemView.findViewById(R.id.systolic_list);
             dDistolic=(TextView) itemView.findViewById(R.id.diastolic_list);
