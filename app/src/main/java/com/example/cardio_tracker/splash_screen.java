@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
+/**
+ * Will show splash screen.
+ */
 public class splash_screen extends AppCompatActivity {
 
     Handler handler;
