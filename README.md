@@ -1,6 +1,12 @@
 # Cardio-Tracker
 
-An android app that helps a user to track his blood pressure and heart rate.
+Cardio-Tracker is an Android app designed to help users keep track of their blood pressure and heart rate. With this app, users can easily record their readings and monitor their cardiovascular health over time.
+
+Cardio-Tracker's simple and user-friendly interface allows users to input their measurements quickly and easily. The app also provides visualizations that help users track their progress and identify trends in their cardiovascular health.
+
+In addition to tracking measurements, Cardio-Tracker also offers valuable insights into cardiovascular health. The app can generate reports that show trends and patterns in blood pressure and heart rate, as well as provide tips for lifestyle changes that can improve overall cardiovascular health.
+
+Although Cardio-Tracker is a basic app, it is a valuable tool for those looking to monitor and improve their cardiovascular health. With its easy-to-use interface and useful features, Cardio-Tracker is a great addition to any health and fitness routine.
 
 ## Authors
 
