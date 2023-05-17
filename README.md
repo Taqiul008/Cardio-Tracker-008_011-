@@ -15,7 +15,9 @@ Although Cardio-Tracker is a basic app, it is a valuable tool for those looking 
 
 ## Badges
 
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+<a href="https://github.com/Taqiul008/Cardio-Tracker_008_011/blob/master/LICENSE">
+    <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-yellow.svg" target="_blank" />
+</a>
 
 ## FAQ
 #### Does the app measure blood pressure and pulse?
